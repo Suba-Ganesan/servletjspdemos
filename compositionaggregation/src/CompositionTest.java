@@ -1,11 +1,11 @@
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.samples.domain.Guide;
-import com.samples.domain.Student;
+import com.samples.domain.Address;
+import com.samples.domain.User;
 import com.samples.utils.HibernateUtil;
 
-public class StudentTest {
+public class CompositionTest {
 
 	public static void main(String[] args) {
 		
@@ -17,14 +17,11 @@ public class StudentTest {
 
 			txn.begin();
 
-			Guide guide = new Guide("2000ABC001", "Mike Lawson", 1000);
-			Student student1 = new Student("SR001", "Max", guide,0);
-			Student student2 = new Student("SR002", "Bob", guide,0);
-			
-			session.save(guide);
-			session.save(student1);
-			session.save(student2);
-			
+			Address billAddress = new Address("12", "Main Street", "Chennai", "612345");
+			Address shipAddress = new Address("65/12", "Busy Street", "Trichy", "412385");
+			User user = new User("Ajay", billAddress, shipAddress, 34);
+			session.save(user);
+
 			txn.commit();
 
 		} catch (Exception ex) {

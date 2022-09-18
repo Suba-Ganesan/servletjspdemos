@@ -11,15 +11,15 @@ The student registration is confirmed: ${param.firstname} ${param.lastname}
 	<br/>
 	Welcome <%= request.getParameter("firstname") %> <%= request.getParameter("lastname") %>
 	<p>You are from ${param.country}</p>
-	Your State: 
-	<ul>
+	Your State:  ${param.state }
+	<%-- <ul>
 		<%
-			String[] langs = request.getParameterValues("state");
-			for (String lang : langs) {
-				out.println("<li>" + lang + "</li>");
+			String[] native = request.getParameterValues("state");
+			for (String element : native) {
+				out.println(element);
 			}
 		%>
 	
-	</ul>
+	</ul> --%>
 </body>
 </html>

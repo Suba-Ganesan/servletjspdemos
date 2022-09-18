@@ -2,23 +2,22 @@ package com.samples.domain;
 
 import java.util.List;
 
-
 public class Book {
 
 	private String isbn;
 	private String name;
-	private Publisher publisher; //ref object
-	private List<Chapter> chapters;//ref object
-	
+	private Publisher publisher; // ref object
+	private List<Chapter> chapters;// ref object
+
 	public Book(String isbn, String name, Publisher publisher) {
 		super();
 		this.isbn = isbn;
 		this.name = name;
 		this.publisher = publisher;
+
 	}
 
 	public Book() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getIsbn() {
@@ -57,5 +56,5 @@ public class Book {
 	public String toString() {
 		return "Book [isbn=" + isbn + ", name=" + name + ", publisher=" + publisher + ", chapters=" + chapters + "]";
 	}
-	
+
 }
